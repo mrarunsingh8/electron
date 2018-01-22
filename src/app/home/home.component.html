@@ -1,0 +1,8 @@
+
+<mat-grid-list ngClass="listContainer" cols="3" rowHeight="1:1">
+  <mat-grid-tile appHighlight appExecute *ngFor="let boxItem of boxes" [boxId]="boxItem.id"></mat-grid-tile>
+</mat-grid-list>
+
+<mat-card>
+	<button mat-button (click)="reload()">New Game</button>
+</mat-card>

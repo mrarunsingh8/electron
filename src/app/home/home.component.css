@@ -1,0 +1,12 @@
+.mat-grid-tile {
+  background: lightblue;
+}
+
+mat-card{
+}
+button.mat-button{
+    background-color: #5398af;
+    color: #FFF;
+    font-weight: 900;
+    font-family: cursive;
+}
