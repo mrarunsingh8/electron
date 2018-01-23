@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HighlightDirective } from './home/highlight.directive';
 import { ExecuteDirective } from './home/execute.directive';
+import { TempComponent } from './temp/temp.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ExecuteDirective } from './home/execute.directive';
     AppComponent,
     HomeComponent,
     HighlightDirective,
-    ExecuteDirective
+    ExecuteDirective,
+    TempComponent
   ],
   imports: [
     BrowserModule,

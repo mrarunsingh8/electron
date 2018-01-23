@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {MatSnackBar} from '@angular/material';
+import {app} from 'electron';
 
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
 
 	denPlayer: number = 1;
 
-	constructor(private location: Location, public snackBar: MatSnackBar) {}
+	constructor(private router: Router, public snackBar: MatSnackBar) {}
 
 	ngOnInit() {
 
@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
 		let self = this;
 		setTimeout(function(){
 			self.openSnackBar(self.getDenPlayer(), '');
+			self.changeDen();
 		},0);
 	}
 	changeDen(){
@@ -166,9 +167,14 @@ export class HomeComponent implements OnInit {
 			this.openSnackBar('' , this.getDenPlayer()+ " has won.");
 			this.completedCount = 9;
 		}
+		if(this.completedCount === 9){
+			setTimeout(() => {
+				this.openSnackBar("Game is over.", "Start new game.");
+			}, 4000);
+		}
 	}
 
 	reload(){
-		this.location.go('/');
+		this.router.navigate(['temp']);
 	}
 }

@@ -1,0 +1,11 @@
+mat-card{
+	
+}
+
+mat-spinner{
+	left: 40%;
+}
+
+mat-progress-spinner circle, mat-spinner circle {
+    stroke: #5398af !important;
+}
